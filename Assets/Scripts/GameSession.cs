@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameSession : MonoBehaviour
 {
     [SerializeField] GameObject startingText;
-    [SerializeField] float initialGameSpeed = 0.2f;
+    [SerializeField] int periodDurationInSeconds = 20;
+    [SerializeField] float initialGameSpeed = 0.1f;
     float gameSpeed = 0;
     [SerializeField] bool started = false;
     float point = 0;
@@ -20,10 +21,17 @@ public class GameSession : MonoBehaviour
     {
         if (started) {
             point += gameSpeed;
+            UpdateGameSpeed();
         } else {
             StartGame();
         }
 
+    }
+
+    private void UpdateGameSpeed() {
+        float runningTime = Time.timeSinceLevelLoad;
+        int gameSpeedMultiplierFactor = Mathf.RoundToInt(runningTime/periodDurationInSeconds);
+        gameSpeed = initialGameSpeed + 0.1f*gameSpeedMultiplierFactor;
     }
 
     public float GetGameSpeed () {
