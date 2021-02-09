@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float jumpSpeed = 10;
+    bool dead = false;
     GameSession session;
     Animator animator;
     Collider2D myCollider;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         session = FindObjectOfType<GameSession>();
         animator = GetComponent<Animator>();
         myCollider = GetComponent<Collider2D>();
@@ -21,13 +23,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
+        if (!dead) {
+            Jump();  
+        }
     }
 
     private void Jump() {
         if(session.GameHasStarted()){
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                if (myCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
+            if (myCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {
+                if (Input.GetKeyDown(KeyCode.Space)) {
                     animator.SetTrigger("Jump");
                     mybody.velocity = new Vector2(0, jumpSpeed);
                 }
@@ -36,5 +40,11 @@ public class Player : MonoBehaviour
     }
     public void Run() {
         animator.SetBool("Running", true);
+    }
+
+    private void Die() {
+        session.Stop();
+        dead = true;
+        animator.SetBool("Dead", dead);
     }
 }

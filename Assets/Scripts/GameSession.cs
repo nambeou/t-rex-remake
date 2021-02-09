@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameSession : MonoBehaviour
@@ -47,11 +48,19 @@ public class GameSession : MonoBehaviour
             gameSpeed = initialGameSpeed;
             startingText.SetActive(false);
             FindObjectOfType<Player>().Run();
+            FindObjectOfType<Spawner>().Spawn();
         }
     }
 
     public bool GameHasStarted() {
         return started;
+    }
+
+    public void Stop() {
+            gameSpeed = 0;
+            startingText.GetComponent<TextMeshProUGUI>().text = "You Suck";
+            startingText.SetActive(true);
+            FindObjectOfType<Spawner>().StopSpawning();
     }
 
 }

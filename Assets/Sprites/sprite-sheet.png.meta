@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: ce2cc45368e951948b0822e1f3361b56
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7773031391787181946
+    second: small-cactus
+  - first:
+      213: -1426790471357470633
+    second: flying-dino-1
+  - first:
+      213: -2506210909196879853
+    second: flying-dino-2
+  - first:
+      213: -8907015550746980148
+    second: big-cactus
+  - first:
+      213: -3085487725770422062
+    second: together-strong
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -45,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,7 +124,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: flying-dino-1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 45
+        width: 90
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75863d130a5033ce0800000000000000
+      internalID: -1426790471357470633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flying-dino-2
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 45
+        width: 88
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3187c11e476283dd0800000000000000
+      internalID: -2506210909196879853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small-cactus
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 54
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a776f671eda5fdb60800000000000000
+      internalID: 7773031391787181946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-cactus
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 27
+        width: 49
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc098d84c8ce36480800000000000000
+      internalID: -8907015550746980148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: together-strong
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 29
+        width: 100
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d840a2d2452e25d0800000000000000
+      internalID: -3085487725770422062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
