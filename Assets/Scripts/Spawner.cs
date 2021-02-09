@@ -5,7 +5,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] Obstacle[] enemyPrefabs;
-    [SerializeField] float initialTimeBetweenSpawn = 1;
+    [SerializeField] float minTimeBetweenSpawn = 1;
+    [SerializeField] float maxTimeBetweenSpawn = 1;
     float timeBetweenSpawn;
     GameSession gameSession;
     Coroutine spawnCoroutine;
@@ -15,7 +16,6 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         gameSession = FindObjectOfType<GameSession>();
-        timeBetweenSpawn = initialTimeBetweenSpawn;
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnEnemy() {
         while (spawning) {
-            // timeBetweenSpawn = 10*gameSession.GetGameSpeed()*initialTimeBetweenSpawn;
+            timeBetweenSpawn = Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn);
             int randomIndex = Random.Range(0, enemyPrefabs.Length);
             Debug.Log("Spawning -> " + randomIndex.ToString());
             Obstacle enemyToSpawn = Instantiate(enemyPrefabs[randomIndex], 

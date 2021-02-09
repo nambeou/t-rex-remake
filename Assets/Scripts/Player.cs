@@ -47,4 +47,11 @@ public class Player : MonoBehaviour
         dead = true;
         animator.SetBool("Dead", dead);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.GetComponent<Obstacle>()) {
+            Die();
+        }
+    }
 }

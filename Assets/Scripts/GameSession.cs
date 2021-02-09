@@ -58,6 +58,7 @@ public class GameSession : MonoBehaviour
 
     public void Stop() {
             gameSpeed = 0;
+            started = false;
             startingText.GetComponent<TextMeshProUGUI>().text = "You Suck";
             startingText.SetActive(true);
             FindObjectOfType<Spawner>().StopSpawning();

@@ -10,9 +10,11 @@ public class Obstacle : MonoBehaviour
     [SerializeField] float maxHeight = 0;
     Collider2D myCollider;
     Rigidbody2D mybody;
+    GameSession gameSession;
     // Start is called before the first frame update
     void Start()
     {
+        gameSession = FindObjectOfType<GameSession>();
         myCollider = GetComponent<Collider2D>();
         mybody = GetComponent<Rigidbody2D>();
         transform.position = new Vector2(transform.position.x, referenceGround.transform.position.y + Random.Range(minHeight, maxHeight));
@@ -28,4 +30,6 @@ public class Obstacle : MonoBehaviour
         float currentGameSpeed = FindObjectOfType<GameSession>().GetGameSpeed();
         mybody.velocity = new Vector2(-currentGameSpeed*10, 0);
     }
+
+
 }
